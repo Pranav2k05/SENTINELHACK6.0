@@ -78,11 +78,11 @@ const TracksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="squid-card p-4 sm:p-5 md:p-6 rounded-lg border border-squid-pink/30 hover:border-squid-pink/60 transition-all duration-300"
+              className="squid-card p-4 sm:p-5 md:p-6 rounded-lg border border-squid-pink/30 card-hover-effect animate-border-pulse group"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="mb-3 sm:mb-4">{track.icon}</div>
-                <h3 className={`text-lg sm:text-xl md:text-xl font-cyber mb-1 sm:mb-2 text-${track.color}`}>{track.title}</h3>
+                <div className="mb-3 sm:mb-4 transform group-hover:scale-110 transition-transform duration-300">{track.icon}</div>
+                <h3 className={`text-lg sm:text-xl md:text-xl font-cyber mb-1 sm:mb-2 text-${track.color} group-hover:text-white transition-colors duration-300`}>{track.title}</h3>
                 <h4 className="text-sm sm:text-base text-gray-400 mb-2 sm:mb-3 italic">{track.subtitle}</h4>
                 <p className="text-gray-300 text-xs sm:text-sm md:text-base">{track.description}</p>
               </div>

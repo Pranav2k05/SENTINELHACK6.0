@@ -119,7 +119,7 @@ const HeroSection = () => {
             className="mb-6 sm:mb-8"
           >
             <h1 
-              className={`text-3xl sm:text-5xl md:text-7xl font-cyber font-black mb-3 sm:mb-4 ${glitching ? 'glitch' : ''}`}
+              className={`text-3xl sm:text-5xl md:text-7xl font-cyber font-black mb-3 sm:mb-4 ${glitching ? 'glitch' : ''} animate-scale-pulse`}
               data-text="SENTINEL HACK 6.0"
             >
               <span className="neon-text-pink">SENTINEL</span> 
@@ -127,14 +127,26 @@ const HeroSection = () => {
               <span className="neon-text-teal">6.0</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-4 sm:mb-6 text-gray-300 px-2">
-              24-hour state level hackathon.<br /> Let the games begin!
+              24-hour state level hackathon.<br /> 
+              <span className="text-squid-pink font-semibold">Let the games begin!</span>
             </p>
             
-            {/* Squid Game Shapes Decoration */}
+            {/* Prize Pool Highlight */}
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="inline-block squid-card border-2 border-squid-pink/50 px-6 py-3 rounded-lg mb-4 animate-border-pulse"
+            >
+              <span className="text-sm sm:text-base text-gray-400">Prize Pool Worth</span>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-cyber neon-text-pink">₹1,00,000+</p>
+            </motion.div>
+            
+            {/* Squid Game Shapes Decoration - Animated */}
             <div className="flex items-center justify-center gap-4 sm:gap-6 my-6">
-              <div className="w-8 h-8 sm:w-12 sm:h-12 border-2 border-squid-pink rounded-full"></div>
-              <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-b-[21px] sm:border-l-[18px] sm:border-r-[18px] sm:border-b-[31px] border-l-transparent border-r-transparent border-b-squid-pink"></div>
-              <div className="w-8 h-8 sm:w-12 sm:h-12 border-2 border-squid-pink rotate-45"></div>
+              <div className="w-8 h-8 sm:w-12 sm:h-12 border-2 border-squid-pink rounded-full squid-shape-float squid-shape-pulse"></div>
+              <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-b-[21px] sm:border-l-[18px] sm:border-r-[18px] sm:border-b-[31px] border-l-transparent border-r-transparent border-b-squid-pink squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="w-8 h-8 sm:w-12 sm:h-12 border-2 border-squid-pink squid-shape-spin squid-shape-pulse" style={{animationDelay: '1s'}}></div>
             </div>
           </motion.div>
           
@@ -145,13 +157,14 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8"
           >
             <div 
-              className="font-cyber bg-squid-pink/80 px-6 sm:px-8 py-3 rounded clip-slant shadow-neon-pink text-sm sm:text-lg uppercase tracking-wider cursor-default"
+              className="font-cyber bg-gradient-to-r from-squid-pink to-squid-pink/70 px-6 sm:px-8 py-3 rounded clip-slant shadow-neon-pink text-sm sm:text-lg uppercase tracking-wider cursor-default animate-gradient hover:scale-105 transition-transform duration-300"
+              style={{backgroundSize: '200% 200%'}}
             >
               Registration Starts Soon
             </div>
             <button 
               onClick={() => scrollToSection('tracks')}
-              className="font-cyber border border-squid-teal/50 px-6 sm:px-8 py-3 rounded clip-slant hover:shadow-neon-teal transition-all duration-300 text-sm sm:text-lg uppercase tracking-wider"
+              className="font-cyber border-2 border-squid-teal px-6 sm:px-8 py-3 rounded clip-slant hover:shadow-neon-teal hover:bg-squid-teal/20 transition-all duration-300 text-sm sm:text-lg uppercase tracking-wider hover:scale-105"
             >
               Explore Tracks
             </button>

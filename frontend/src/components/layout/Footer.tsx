@@ -88,16 +88,6 @@ const Footer = () => {
               Bengaluru, Karnataka
               </a>
             </p>
-            <p className="mt-4">
-              <a 
-                href="https://forms.google.com/sponsor-sentinel-hack" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-cyber text-sm border border-squid-pink px-4 py-2 rounded hover:shadow-neon-pink transition-all duration-300"
-              >
-                Become a Sponsor
-              </a>
-            </p>
           </div>
         </div>
 

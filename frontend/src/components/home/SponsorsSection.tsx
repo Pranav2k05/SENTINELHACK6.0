@@ -1,18 +1,5 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-
-const sponsors = [
-  { name: 'TechGiant', level: 'Platinum', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&auto=format&fit=crop&q=80' },
-  { name: 'QuantumSoft', level: 'Gold', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&auto=format&fit=crop&q=80' },
-  { name: 'CyberSystems', level: 'Gold', image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&auto=format&fit=crop&q=80' },
-  { name: 'Datarithm', level: 'Silver', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=100&auto=format&fit=crop&q=80' },
-  { name: 'InnovateLabs', level: 'Silver', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=100&auto=format&fit=crop&q=80' },
-  { name: 'NexGen', level: 'Bronze', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=200&h=100&auto=format&fit=crop&q=80' },
-  { name: 'ByteCraft', level: 'Bronze', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&auto=format&fit=crop&q=80' },
-  { name: 'CloudPeak', level: 'Bronze', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&auto=format&fit=crop&q=80' },
-];
 
 const SponsorsSection = () => {
   return (
@@ -46,72 +33,38 @@ const SponsorsSection = () => {
           
           {/* Squid Game Shapes */}
           <div className="flex items-center justify-center gap-3 mt-4">
-            <div className="w-4 h-4 border-2 border-squid-pink rounded-full"></div>
-            <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-squid-pink"></div>
-            <div className="w-4 h-4 border-2 border-squid-pink rotate-45"></div>
+            <div className="w-4 h-4 border-2 border-squid-pink rounded-full squid-shape-float squid-shape-pulse"></div>
+            <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-squid-pink squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '0.3s'}}></div>
+            <div className="w-4 h-4 border-2 border-squid-pink squid-shape-spin squid-shape-pulse" style={{animationDelay: '0.6s'}}></div>
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-          {sponsors.map((sponsor, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="flex flex-col items-center justify-center rounded-lg overflow-hidden border border-squid-pink/30 hover:border-squid-pink/60 transition-all duration-300"
-            >
-              <Card className="w-full h-full bg-transparent border-0">
-                <CardContent className="p-0">
-                  <div className="flex flex-col items-center">
-                    <div className="w-full h-16 sm:h-20 md:h-24 mb-2 bg-black/20 overflow-hidden">
-                      <img 
-                        src={sponsor.image} 
-                        alt={`${sponsor.name} logo`} 
-                        className="w-full h-full object-cover object-center" 
-                      />
-                    </div>
-                    <div className="p-3 text-center">
-                      <span className="text-sm sm:text-base md:text-xl font-cyber">{sponsor.name}</span>
-                      <span className="block text-xs mt-1 md:mt-2 text-gray-400">{sponsor.level} Sponsor</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
+        {/* Sponsors Coming Soon Card */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-6 sm:mt-8 md:mt-16"
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto"
         >
-          <a 
-            href="https://forms.google.com/sponsor-sentinel-hack" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="font-cyber inline-flex items-center border border-squid-pink px-4 py-2 sm:px-6 sm:py-3 rounded hover:shadow-neon-pink transition-all duration-300 text-xs sm:text-sm md:text-base"
-          >
-            Become a Sponsor
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-3 w-3 sm:h-4 sm:w-4 ml-2" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M17 8l4 4m0 0l-4 4m4-4H3" 
-              />
-            </svg>
-          </a>
+          <div className="squid-card border-2 border-squid-pink/40 rounded-xl p-8 md:p-12 text-center animate-border-pulse card-hover-effect">
+            {/* Animated Squid Game Shapes */}
+            <div className="flex items-center justify-center gap-6 mb-6">
+              <div className="w-12 h-12 md:w-16 md:h-16 border-3 border-squid-pink/60 rounded-full squid-shape-float squid-shape-pulse"></div>
+              <div className="w-0 h-0 border-l-[18px] border-r-[18px] border-b-[31px] md:border-l-[24px] md:border-r-[24px] md:border-b-[41px] border-l-transparent border-r-transparent border-b-squid-pink/60 squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="w-12 h-12 md:w-16 md:h-16 border-3 border-squid-pink/60 squid-shape-spin squid-shape-pulse" style={{animationDelay: '1s'}}></div>
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-cyber neon-text-teal mb-4">
+              Sponsors
+            </h3>
+            <p className="text-xl md:text-2xl text-gray-300 mb-2">
+              Will be announced soon!
+            </p>
+            <p className="text-sm md:text-base text-gray-500">
+              Stay tuned for exciting partnerships
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

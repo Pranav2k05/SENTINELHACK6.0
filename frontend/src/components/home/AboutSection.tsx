@@ -37,16 +37,16 @@ const AboutSection = () => {
               your skills and push the boundaries of what's possible. Let the games begin!
             </p>
             <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-6 md:mt-8">
-              <div className="squid-card p-2 sm:p-3 md:p-4 text-center border border-squid-pink/30">
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-cyber neon-text-teal mb-0.5 md:mb-1">500+</div>
+              <div className="squid-card p-2 sm:p-3 md:p-4 text-center border border-squid-pink/30 hover:border-squid-pink/60 hover:scale-105 transition-all duration-300">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-cyber neon-text-teal mb-0.5 md:mb-1">250+</div>
                 <div className="text-[10px] sm:text-xs md:text-sm text-gray-400">PARTICIPANTS</div>
               </div>
-              <div className="squid-card p-2 sm:p-3 md:p-4 text-center border border-squid-pink/30">
+              <div className="squid-card p-2 sm:p-3 md:p-4 text-center border border-squid-pink/30 hover:border-squid-pink/60 hover:scale-105 transition-all duration-300">
                 <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-cyber neon-text-pink mb-0.5 md:mb-1">24</div>
                 <div className="text-[10px] sm:text-xs md:text-sm text-gray-400">HOURS</div>
               </div>
-              <div className="squid-card p-2 sm:p-3 md:p-4 text-center border border-squid-pink/30">
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-cyber neon-text-teal mb-0.5 md:mb-1">₹50K+</div>
+              <div className="squid-card p-2 sm:p-3 md:p-4 text-center border border-squid-pink/30 hover:border-squid-pink/60 hover:scale-105 transition-all duration-300">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-cyber neon-text-teal mb-0.5 md:mb-1">₹1L+</div>
                 <div className="text-[10px] sm:text-xs md:text-sm text-gray-400">PRIZES</div>
               </div>
             </div>
