@@ -16,7 +16,7 @@ const AboutSection = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center">
+        <div className="squid-section-frame grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -26,6 +26,7 @@ const AboutSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-cyber mb-3 sm:mb-4 md:mb-6">
               ABOUT <span className="neon-text-pink">SENTINEL HACK 6.0</span>
             </h2>
+            <div className="squid-symbol-divider mb-4" aria-hidden="true"></div>
             <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 md:mb-6">
               Sentinel Hack 6.0 is a premier 24-hour state level hackathon designed to bring together the brightest minds
               and innovative thinkers. This event offers participants
@@ -82,7 +83,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="font-cyber text-sm sm:text-base md:text-lg">Date & Time</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-300">To be announced</p>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-300">24th and 25th April 2026 | 9:00AM - 9:00AM</p>
                 </div>
               </div>
               <div className="flex items-center">

@@ -16,7 +16,7 @@ const SponsorsSection = () => {
         <div className="absolute bottom-[30%] right-[5%] w-14 h-14 md:w-18 md:h-18 border-2 border-squid-teal/15 rounded-full squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '3s'}}></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 squid-section-frame">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const SponsorsSection = () => {
           </p>
           
           {/* Squid Game Shapes */}
-          <div className="flex items-center justify-center gap-3 mt-4">
+          <div className="squid-symbol-divider" aria-hidden="true">
             <div className="w-4 h-4 border-2 border-squid-pink rounded-full squid-shape-float squid-shape-pulse"></div>
             <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-squid-pink squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '0.3s'}}></div>
             <div className="w-4 h-4 border-2 border-squid-pink squid-shape-spin squid-shape-pulse" style={{animationDelay: '0.6s'}}></div>

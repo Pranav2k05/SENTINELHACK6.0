@@ -17,7 +17,7 @@ const CtaSection = () => {
         <div className="cyber-grid opacity-30"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-20">
+      <div className="container mx-auto px-4 relative z-20 squid-section-frame">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,13 +40,13 @@ const CtaSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <span 
-              className="font-cyber bg-squid-pink/80 px-4 sm:px-6 py-2 sm:py-3 md:px-8 md:py-4 rounded clip-slant shadow-neon-pink text-sm sm:text-base md:text-lg uppercase tracking-wider cursor-default"
+              className="squid-button-primary px-4 sm:px-6 py-2 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg cursor-default"
             >
               Registration Starts Soon
             </span>
             <a 
               href="mailto:sentinelhack@ksit.edu.in" 
-              className="font-cyber border border-squid-teal px-4 sm:px-6 py-2 sm:py-3 md:px-8 md:py-4 rounded clip-slant hover:shadow-neon-teal transition-all duration-300 text-sm sm:text-base md:text-lg uppercase tracking-wider"
+              className="squid-button-outline px-4 sm:px-6 py-2 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg"
             >
               Contact Us
             </a>

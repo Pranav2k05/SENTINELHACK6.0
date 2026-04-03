@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { REGISTRATION_FORM_URL } from '@/config/links';
 
 const navItems = [
   { name: 'Home', path: '/', id: 'home' },
@@ -61,48 +62,51 @@ const Navbar = () => {
   };
 
   return (
-    <header 
+    <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'glassmorphism py-2' : 'bg-transparent py-3'
+        scrolled ? 'py-2 bg-black/70 backdrop-blur-md border-b border-white/10' : 'py-3 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-3 min-w-0">
           <Link to="/" className="flex items-center">
             <div className="flex items-center gap-1 sm:gap-2">
-              <span className="font-cyber text-base sm:text-xl md:text-2xl font-bold neon-text-pink">
+              <span className="font-cyber text-lg sm:text-xl md:text-2xl leading-none tracking-wide neon-text-pink">
                 SENTINEL
               </span>
-              <span className="font-cyber text-base sm:text-xl md:text-2xl font-bold neon-text-teal">
+              <span className="font-cyber text-lg sm:text-xl md:text-2xl leading-none tracking-wide text-white">
                 HACK
               </span>
-              <span className="font-cyber text-base sm:text-xl md:text-2xl font-bold text-white">
+              <span className="font-cyber text-lg sm:text-xl md:text-2xl leading-none tracking-wide neon-text-teal">
                 6.0
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-2 lg:space-x-6">
+          <nav className="hidden lg:flex items-center justify-end gap-2 xl:gap-4 2xl:gap-6 flex-1">
             {navItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => scrollToSection(item.id)}
-                className="font-cyber text-sm uppercase tracking-wider hover:text-squid-pink transition-colors duration-300 px-1"
+                className="font-cyber text-sm xl:text-base uppercase tracking-[0.08em] text-gray-200 hover:text-white transition-colors duration-300 px-1"
               >
                 {item.name}
               </button>
             ))}
-            <span
-              className="font-cyber text-sm uppercase tracking-wider ml-1 bg-squid-pink/80 px-3 lg:px-6 py-2 rounded clip-slant shadow-neon-pink cursor-default"
+            <a
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="squid-button-primary text-sm xl:text-base tracking-[0.1em] ml-1 px-3 xl:px-5 py-2 whitespace-nowrap min-w-[112px]"
             >
-              Coming Soon
-            </span>
+              Register
+            </a>
           </nav>
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-white"
+            className="lg:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -119,23 +123,29 @@ const Navbar = () => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden inset-0 top-[57px] backdrop-blur-lg bg-cyber-dark/70 z-50 overflow-auto"
+            className="lg:hidden inset-0 top-[58px] backdrop-blur-lg bg-black/90 z-50 overflow-auto border-t border-white/10"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col space-y-5">
               {navItems.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToSection(item.id)}
-                  className="font-cyber text-base uppercase tracking-wider py-3 text-left hover:text-squid-pink transition-colors duration-300 border-b border-squid-pink/20"
+                  className="font-cyber text-2xl uppercase tracking-wide py-2 text-left text-gray-100 hover:text-squid-pink transition-colors duration-300 border-b border-white/10"
                 >
                   {item.name}
                 </button>
               ))}
-              <span
-                className="font-cyber text-base uppercase tracking-wider bg-squid-pink/80 px-6 py-3 mt-4 text-center rounded clip-slant shadow-neon-pink cursor-default"
+              <a
+                href={REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+                className="font-cyber text-xl uppercase tracking-wide bg-gradient-to-r from-squid-pink to-squid-teal px-6 py-3 mt-2 text-center rounded clip-slant shadow-neon-pink"
               >
-                Coming Soon
-              </span>
+                Register Now
+              </a>
             </div>
           </motion.div>
         )}

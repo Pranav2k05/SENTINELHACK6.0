@@ -8,7 +8,7 @@ const faqs = [
     question: 'When and Where?',
     answer: (
       <>
-        Sentinel Hack 6.0 will take place at K.S Institute of Technology, 14, Kanakapura Main Road, Municipal Corporation Layout, Raghuvanahalli, Bengaluru, Karnataka 560109. Dates to be announced soon!{" "}
+        Sentinel Hack 6.0 will take place at K.S Institute of Technology, 14, Kanakapura Main Road, Municipal Corporation Layout, Raghuvanahalli, Bengaluru, Karnataka 560109 on 24th and 25th April 2026 from 9:00AM to 9:00AM.{" "}
         <a
           href="https://maps.app.goo.gl/bWyLk1W3xV9Wxv438"
           target="_blank"
@@ -82,7 +82,7 @@ const FAQSection: React.FC = () => {
         <div className="absolute bottom-[40%] left-[4%] w-10 h-10 md:w-14 md:h-14 border-2 border-squid-pink/20 rounded-full squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '3.5s'}}></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 squid-section-frame">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ const FAQSection: React.FC = () => {
           </p>
           
           {/* Squid Game Shapes */}
-          <div className="flex items-center justify-center gap-3 mt-4">
+          <div className="squid-symbol-divider" aria-hidden="true">
             <div className="w-4 h-4 border-2 border-squid-pink rounded-full"></div>
             <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-squid-pink"></div>
             <div className="w-4 h-4 border-2 border-squid-pink rotate-45"></div>

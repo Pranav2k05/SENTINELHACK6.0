@@ -15,6 +15,7 @@ const Footer = () => {
   return (
     <footer className="w-full squid-card border-t border-squid-pink/20">
       <div className="container mx-auto px-4 py-8">
+        <div className="squid-section-frame">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -95,6 +96,7 @@ const Footer = () => {
           <p className="text-sm text-center text-gray-400">
             © {currentYear} Sentinel Hack 6.0. All rights reserved. <span className="block sm:inline">Let the games begin.</span>
           </p>
+        </div>
         </div>
       </div>
     </footer>

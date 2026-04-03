@@ -72,7 +72,7 @@ export default {
 					blue: '#22e8ff',
 					purple: '#c851ff',
 					teal: '#0affc2',
-					yellow: '#ffdb4d',
+					yellow: '#facc15',
 					pink: '#ed1b76'
 				},
 				squid: {

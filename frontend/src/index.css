@@ -8,44 +8,44 @@
 
 @layer base {
   :root {
-    --background: 225 40% 9%;
+    --background: 225 40% 7%;
     --foreground: 0 0% 98%;
 
-    --card: 225 40% 12%;
+    --card: 225 34% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 225 40% 9%;
+    --popover: 225 34% 9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 340 85% 45%;
+    --primary: 335 82% 49%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 195 90% 56%;
+    --secondary: 184 78% 34%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 225 35% 25%;
-    --muted-foreground: 0 0% 75%;
+    --muted: 225 26% 20%;
+    --muted-foreground: 0 0% 76%;
 
-    --accent: 275 80% 60%;
+    --accent: 184 80% 45%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 225 40% 20%;
-    --input: 225 40% 20%;
-    --ring: 340 85% 50%;
+    --border: 225 26% 24%;
+    --input: 225 26% 24%;
+    --ring: 335 82% 49%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 225 40% 9%;
+    --sidebar-background: 225 34% 9%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 340 85% 45%;
+    --sidebar-primary: 335 82% 49%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 225 40% 20%;
+    --sidebar-accent: 225 26% 20%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 225 40% 20%;
-    --sidebar-ring: 340 85% 50%;
+    --sidebar-border: 225 26% 24%;
+    --sidebar-ring: 335 82% 49%;
   }
 }
 
@@ -56,6 +56,11 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    background-image:
+      radial-gradient(circle at 12% 12%, rgba(237, 27, 118, 0.24), transparent 34%),
+      radial-gradient(circle at 86% 24%, rgba(6, 123, 123, 0.2), transparent 40%),
+      radial-gradient(circle at 24% 90%, rgba(34, 232, 255, 0.1), transparent 44%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -69,74 +74,80 @@
 
 @layer utilities {
   .bg-grid {
-    background-size: 30px 30px;
+    background-size: 44px 44px;
   }
 
   .glassmorphism {
-    @apply bg-opacity-20 bg-black backdrop-blur-md border-b border-squid-pink/10;
+    background: rgba(8, 12, 24, 0.72);
+    border: 1px solid rgba(237, 27, 118, 0.16);
+    backdrop-filter: blur(10px);
   }
 
   .squid-card {
-    @apply bg-opacity-30 bg-black backdrop-blur-md;
-    background: linear-gradient(135deg, rgba(237, 27, 118, 0.05) 0%, rgba(6, 123, 123, 0.05) 100%);
+    background: linear-gradient(160deg, rgba(237, 27, 118, 0.14) 0%, rgba(8, 10, 20, 0.82) 44%, rgba(6, 123, 123, 0.14) 100%);
+    border: 1px solid rgba(237, 27, 118, 0.22);
+    backdrop-filter: blur(8px);
   }
 
   .clip-slant {
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    clip-path: polygon(0 0, 96% 0, 100% 100%, 4% 100%);
   }
 
   .neon-text-red {
-    @apply text-neon-red;
-    text-shadow: 0 0 5px #ff3a6a, 0 0 20px rgba(255, 58, 106, 0.5);
+    color: #ff3a6a;
+    text-shadow: 0 0 12px rgba(255, 58, 106, 0.55);
   }
 
   .neon-text-blue {
-    @apply text-neon-blue;
-    text-shadow: 0 0 5px #22e8ff, 0 0 20px rgba(34, 232, 255, 0.5);
+    color: #22e8ff;
+    text-shadow: 0 0 12px rgba(34, 232, 255, 0.5);
   }
 
   .neon-text-purple {
-    @apply text-neon-purple;
-    text-shadow: 0 0 5px #c851ff, 0 0 20px rgba(200, 81, 255, 0.5);
+    color: #f87171;
+    text-shadow: 0 0 10px rgba(248, 113, 113, 0.45);
   }
 
   .neon-text-teal {
-    @apply text-squid-teal;
-    text-shadow: 0 0 5px #067b7b, 0 0 20px rgba(6, 123, 123, 0.5);
+    color: #0ad8d8;
+    text-shadow: 0 0 14px rgba(10, 216, 216, 0.52);
   }
 
   .neon-text-pink {
-    @apply text-squid-pink;
-    text-shadow: 0 0 5px #ed1b76, 0 0 20px rgba(237, 27, 118, 0.5);
+    color: #ed1b76;
+    text-shadow: 0 0 14px rgba(237, 27, 118, 0.62);
   }
 
   .neon-border-red {
-    @apply border-neon-red;
-    box-shadow: 0 0 5px #ff3a6a, 0 0 15px rgba(255, 58, 106, 0.5);
+    border-color: #ff3a6a;
+    box-shadow: 0 0 0 1px rgba(255, 58, 106, 0.32), 0 0 20px rgba(255, 58, 106, 0.3);
   }
 
   .neon-border-blue {
-    @apply border-neon-blue;
-    box-shadow: 0 0 5px #22e8ff, 0 0 15px rgba(34, 232, 255, 0.5);
+    border-color: #22e8ff;
+    box-shadow: 0 0 0 1px rgba(34, 232, 255, 0.3), 0 0 20px rgba(34, 232, 255, 0.25);
   }
 
   .neon-border-purple {
-    @apply border-neon-purple;
-    box-shadow: 0 0 5px #c851ff, 0 0 15px rgba(200, 81, 255, 0.5);
+    border-color: #f87171;
+    box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.3), 0 0 20px rgba(248, 113, 113, 0.2);
   }
 
   .neon-border-teal {
-    @apply border-squid-teal;
-    box-shadow: 0 0 5px #067b7b, 0 0 15px rgba(6, 123, 123, 0.5);
+    border-color: #0ad8d8;
+    box-shadow: 0 0 0 1px rgba(10, 216, 216, 0.3), 0 0 20px rgba(10, 216, 216, 0.28);
   }
 
   .neon-border-pink {
-    @apply border-squid-pink;
-    box-shadow: 0 0 5px #ed1b76, 0 0 15px rgba(237, 27, 118, 0.5);
+    border-color: #ed1b76;
+    box-shadow: 0 0 0 1px rgba(237, 27, 118, 0.3), 0 0 20px rgba(237, 27, 118, 0.3);
   }
 
   .cyber-grid {
-    @apply bg-cyber-grid bg-grid;
+    background-image:
+      linear-gradient(rgba(237, 27, 118, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 123, 123, 0.1) 1px, transparent 1px);
+    @apply bg-grid;
   }
 
   /* Squid Game Animated Shapes */
@@ -192,8 +203,8 @@
   }
 
   @keyframes border-pulse {
-    0%, 100% { border-color: rgba(237, 27, 118, 0.3); box-shadow: 0 0 5px rgba(237, 27, 118, 0.2); }
-    50% { border-color: rgba(237, 27, 118, 0.7); box-shadow: 0 0 20px rgba(237, 27, 118, 0.4); }
+    0%, 100% { border-color: rgba(237, 27, 118, 0.28); box-shadow: 0 0 8px rgba(237, 27, 118, 0.14); }
+    50% { border-color: rgba(10, 216, 216, 0.65); box-shadow: 0 0 24px rgba(10, 216, 216, 0.24); }
   }
 
   @keyframes scale-pulse {
@@ -254,7 +265,45 @@
 
   .card-hover-effect:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(237, 27, 118, 0.2), 0 0 30px rgba(237, 27, 118, 0.1);
+    box-shadow: 0 20px 38px rgba(237, 27, 118, 0.24), 0 0 30px rgba(10, 216, 216, 0.14);
+  }
+
+  .squid-section-frame {
+    @apply squid-card rounded-2xl border border-squid-pink/30 px-4 py-6 sm:px-6 sm:py-8;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 20px 50px rgba(0, 0, 0, 0.28);
+  }
+
+  .squid-symbol-divider {
+    @apply flex items-center justify-center gap-3 mt-4;
+  }
+
+  .squid-symbol-divider::before,
+  .squid-symbol-divider::after {
+    content: '';
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(237, 27, 118, 0.7), transparent);
+  }
+
+  .squid-button-primary {
+    @apply font-cyber uppercase tracking-wider rounded clip-slant transition-all duration-300;
+    background: linear-gradient(95deg, rgba(237, 27, 118, 0.95), rgba(6, 123, 123, 0.95));
+    box-shadow: 0 0 14px rgba(237, 27, 118, 0.45);
+  }
+
+  .squid-button-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 20px rgba(10, 216, 216, 0.35);
+  }
+
+  .squid-button-outline {
+    @apply font-cyber uppercase tracking-wider rounded clip-slant transition-all duration-300 border-2 border-squid-teal;
+    background: rgba(6, 123, 123, 0.08);
+  }
+
+  .squid-button-outline:hover {
+    @apply neon-border-teal;
+    background: rgba(6, 123, 123, 0.18);
   }
 
   .glitch {
@@ -273,14 +322,14 @@
 
   .glitch::before {
     left: 2px;
-    text-shadow: -1px 0 #ff1a3e;
+    text-shadow: -1px 0 #fb7185;
     clip: rect(24px, 550px, 90px, 0);
     animation: glitch-anim 3s infinite linear alternate-reverse;
   }
 
   .glitch::after {
     left: -2px;
-    text-shadow: -1px 0 #1ed5ff;
+    text-shadow: -1px 0 #22e8ff;
     clip: rect(85px, 550px, 140px, 0);
     animation: glitch-anim 2.5s 1s infinite linear alternate-reverse;
   }

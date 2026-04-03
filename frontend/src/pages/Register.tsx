@@ -59,14 +59,15 @@ const Register = () => {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-cyber mb-4">
-                <span className="neon-text-red">REGISTER</span> FOR CYBERHACK
+                <span className="neon-text-pink">REGISTER</span> FOR SENTINEL HACK 6.0
               </h1>
               <p className="text-gray-300">
-                Join the revolution. Secure your spot in the most innovative hackathon of the year.
+                Enter the arena. Build, survive, and win at Sentinel Hack 6.0.
               </p>
+              <div className="squid-symbol-divider" aria-hidden="true"></div>
             </div>
 
-            <div className="glassmorphism border border-white/10 rounded-lg p-6 md:p-8">
+            <div className="squid-section-frame">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
                 <div>
@@ -83,7 +84,7 @@ const Register = () => {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       />
                     </div>
                     <div>
@@ -97,7 +98,7 @@ const Register = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       />
                     </div>
                   </div>
@@ -118,7 +119,7 @@ const Register = () => {
                         required
                         value={formData.teamName}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       />
                     </div>
                     <div>
@@ -131,7 +132,7 @@ const Register = () => {
                         required
                         value={formData.teamSize}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       >
                         <option value="1">Solo (1 person)</option>
                         <option value="2">2 people</option>
@@ -156,7 +157,7 @@ const Register = () => {
                         required
                         value={formData.track}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       >
                         <option value="">Select a track</option>
                         <option value="ai">Artificial Intelligence</option>
@@ -175,7 +176,7 @@ const Register = () => {
                         required
                         value={formData.experience}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       >
                         <option value="">Select your experience</option>
                         <option value="beginner">Beginner (0-1 years)</option>
@@ -201,7 +202,7 @@ const Register = () => {
                         name="github"
                         value={formData.github}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       />
                     </div>
                     <div>
@@ -214,7 +215,7 @@ const Register = () => {
                         rows={4}
                         value={formData.about}
                         onChange={handleChange}
-                        className="w-full glassmorphism bg-black/20 border border-white/20 rounded px-4 py-2 focus:border-neon-red focus:outline-none focus:ring-1 focus:ring-neon-red"
+                        className="w-full bg-black/40 border border-squid-pink/30 rounded px-4 py-2 focus:border-squid-teal focus:outline-none focus:ring-1 focus:ring-squid-teal"
                       ></textarea>
                     </div>
                   </div>
@@ -224,7 +225,7 @@ const Register = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className={`w-full font-cyber bg-cyber-red px-6 py-3 rounded clip-slant hover:shadow-neon-red transition-all duration-300 flex items-center justify-center ${
+                    className={`w-full squid-button-primary px-6 py-3 flex items-center justify-center ${
                       submitting ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >
