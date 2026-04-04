@@ -12,14 +12,16 @@ const HeroSection = () => {
   const targetDate = new Date('2026-04-24T09:00:00');
 
   useEffect(() => {
-    // Create random glitch effect
+    // Only create glitch effect on desktop
+    if (isMobile) return;
+    
     const glitchInterval = setInterval(() => {
       setGlitching(true);
       setTimeout(() => setGlitching(false), 200);
     }, 5000);
 
     return () => clearInterval(glitchInterval);
-  }, []);
+  }, [isMobile]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -33,6 +35,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 cyber-grid opacity-35"></div>
       <div className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.86))]"></div>
       
+      {!isMobile && (
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[10%] left-[5%] w-20 h-20 md:w-28 md:h-28 border-4 border-squid-pink/45 rounded-full squid-shape-float squid-shape-pulse"></div>
         <div className="absolute top-[62%] left-[8%] w-12 h-12 md:w-16 md:h-16 border-3 border-squid-teal/35 rounded-full squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '2s'}}></div>
@@ -57,6 +60,7 @@ const HeroSection = () => {
         <div className="absolute top-[70%] right-[25%] w-8 h-8 md:w-12 md:h-12 border-2 border-squid-pink/20 rounded-full squid-shape-float squid-shape-pulse" style={{animationDelay: '4s'}}></div>
         <div className="absolute top-[5%] left-[40%] w-10 h-10 md:w-14 md:h-14 border-2 border-squid-teal/20 squid-shape-drift-left squid-shape-pulse" style={{animationDelay: '1.5s'}}></div>
       </div>
+      )}
       
       <div className="container mx-auto px-4 z-10 mt-8">
         <div className="flex flex-col items-center justify-center mb-8 md:mb-10">
@@ -76,7 +80,7 @@ const HeroSection = () => {
               <p className="text-xs sm:text-sm md:text-lg text-gray-300 mb-3 md:mb-2 uppercase tracking-wide">
                 Department of Computer Science and Engineering
               </p>
-              <p className="inline-block text-sm sm:text-base md:text-2xl text-squid-pink font-cyber tracking-wide px-3 sm:px-4 py-1 rounded-md border border-squid-pink/60 bg-black/50 shadow-[0_0_22px_rgba(255,31,127,0.35)]">
+              <p className={`inline-block text-sm sm:text-base md:text-2xl text-squid-pink font-cyber tracking-wide px-3 sm:px-4 py-1 rounded-md border border-squid-pink/60 bg-black/50 ${!isMobile ? 'shadow-[0_0_22px_rgba(255,31,127,0.35)]' : ''}`}>
                 FIREFOX CLUB PRESENTS
               </p>
             </div>
@@ -99,7 +103,7 @@ const HeroSection = () => {
               duration: 0.8, 
               delay: 0.2,
               type: "spring",
-              stiffness: 100
+              stiffness: isMobile ? 70 : 100
             }}
             className="mb-5 sm:mb-8"
           >
@@ -129,11 +133,13 @@ const HeroSection = () => {
             <p className="text-sm md:text-base text-gray-300 uppercase tracking-[0.22em]">Registration Closes In</p>
             <CountdownTimer targetDate={targetDate} />
 
+            {!isMobile && (
             <div className="flex items-center justify-center gap-4 sm:gap-6 my-6">
               <div className="w-8 h-8 sm:w-12 sm:h-12 border-2 border-squid-pink rounded-full squid-shape-float squid-shape-pulse"></div>
               <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-b-[21px] sm:border-l-[18px] sm:border-r-[18px] sm:border-b-[31px] border-l-transparent border-r-transparent border-b-squid-pink squid-shape-float-reverse squid-shape-pulse" style={{animationDelay: '0.5s'}}></div>
               <div className="w-8 h-8 sm:w-12 sm:h-12 border-2 border-squid-pink squid-shape-spin squid-shape-pulse" style={{animationDelay: '1s'}}></div>
             </div>
+            )}
           </motion.div>
           
           <motion.div
@@ -163,7 +169,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-base md:text-lg font-bold neon-text-teal mt-6 px-4 py-2 border-2 border-squid-teal rounded-lg bg-squid-teal/10 shadow-[0_0_15px_rgba(0,255,200,0.3)]"
+            className={`text-base md:text-lg font-bold neon-text-teal mt-6 px-4 py-2 border-2 border-squid-teal rounded-lg bg-squid-teal/10 ${!isMobile ? 'shadow-[0_0_15px_rgba(0,255,200,0.3)]' : ''}`}
           >
             ⚠️ Please read the guidelines before registering
           </motion.p>
