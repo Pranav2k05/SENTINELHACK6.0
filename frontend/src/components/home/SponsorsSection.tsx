@@ -9,7 +9,7 @@ const SponsorsSection = () => {
   const sponsors = [
     {
       name: "Suveechi technologies Private Limited",
-      logo: "frontend/public/Uploads/suveechi.png",
+      logo: "/Uploads/suveechi.png",
       website: "#"
     }
   ];
