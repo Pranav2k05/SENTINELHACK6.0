@@ -11,7 +11,7 @@ const REGISTRATION_FORM_URL = "#register";
 const HeroSection = () => {
   const [glitching, setGlitching] = useState(false);
   const isMobile = useIsMobile();
-  const targetDate = new Date('2026-04-24T09:00:00');
+  const targetDate = new Date('2026-04-20T09:00:00');
 
   useEffect(() => {
     if (isMobile) return;
