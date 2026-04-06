@@ -8,7 +8,7 @@ const SponsorsSection = () => {
   // Data structure simplified to just represent visual assets
   const sponsors = [
     {
-      name: "Suveechi technologies Private Limited",
+      name: "Suveechi technologies Pvt. Ltd.",
       logo: "/Uploads/suveechi.png",
       website: "#"
     }
